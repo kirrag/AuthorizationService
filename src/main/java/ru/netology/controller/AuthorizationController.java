@@ -12,18 +12,15 @@ import java.util.List;
 
 import ru.netology.service.AuthorizationService;
 import ru.netology.authority.Authorities;
+import ru.netology.model.Account;
 
 @RestController
 public class AuthorizationController {
-	private AuthorizationService service;
-
-	AuthorizationController(AuthorizationService service) {
-		this.service = service;
-	}
-
-	@GetMapping("/authorize")
-	public List<Authorities> getAuthorities(@RequestParam("user") String user,
-			@RequestParam("password") String password) {
-		return service.getAuthorities(user, password);
-	}
+    AuthorizationService service;
+    
+    @GetMapping("/authorize")
+    public List<Authorities> getAuthorities(@Valid Account account) {
+        return service.getAuthorities(account);
+    }
 }
+
