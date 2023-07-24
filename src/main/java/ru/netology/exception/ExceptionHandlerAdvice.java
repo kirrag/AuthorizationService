@@ -13,6 +13,11 @@ public class ExceptionHandlerAdvice {
 		return new ResponseEntity<>("Exception in getAuthorities method", HttpStatus.BAD_REQUEST);
 	}
 
+	@ExceptionHandler(AccountNotFoundException.class)
+	public ResponseEntity<String> nfHandler(AccountNotFoundException e) {
+		return new ResponseEntity<>("Exception in getAuthorities method", HttpStatus.NOT_FOUND);
+	}
+
 	@ExceptionHandler(UnauthorizedUser.class)
 	public ResponseEntity<String> uuHandler(UnauthorizedUser e) {
 		return new ResponseEntity<>("Exception in getAuthorities method", HttpStatus.UNAUTHORIZED);

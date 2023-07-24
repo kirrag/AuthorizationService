@@ -1,26 +1,24 @@
 package ru.netology.controller;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
+//import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 import ru.netology.service.AuthorizationService;
 import ru.netology.authority.Authorities;
-import ru.netology.model.Account;
-import java.util.concurrent.ConcurrentMap;
 
 @RestController
 public class AuthorizationController {
 	private AuthorizationService service;
 
 	AuthorizationController(AuthorizationService service) {
-    	this.service = service;
+		this.service = service;
 	}
 
 	@GetMapping("/authorize")
