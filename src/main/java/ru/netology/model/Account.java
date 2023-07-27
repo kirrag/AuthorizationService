@@ -2,8 +2,12 @@ package ru.netology.model;
 
 import ru.netology.authority.Authorities;
 import java.util.List;
+//import org.mindrot.jbcrypt.BCrypt;
+
+
 
 public class Account {
+	//private static final String salt = BCrypt.gensalt();
 	private long userId;
 	private String user;
 	private String password;
@@ -12,6 +16,7 @@ public class Account {
 	public Account(long userId, String user, String password, List<Authorities> authorities) {
 		this.userId = userId;
 		this.user = user;
+		//this.password = BCrypt.hashpw(password, salt);
 		this.password = password;
 		this.authorities = authorities;
 	}

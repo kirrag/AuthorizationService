@@ -9,6 +9,7 @@ import ru.netology.exception.InvalidCredentials;
 import ru.netology.exception.UnauthorizedUser;
 import ru.netology.model.Account;
 import ru.netology.exception.AccountNotFoundException;
+//import org.mindrot.jbcrypt.BCrypt;
 
 @Service
 public class AuthorizationService {
@@ -33,7 +34,7 @@ public class AuthorizationService {
 		}
 
 		List<Authorities> userAuthorities = userRepository.getUserAuthorities(user, password);
-
+		//if (isEmpty(userAuthorities) || !BCrypt.checkpw(account.getPassword(), password)) {
 		if (isEmpty(userAuthorities) || !account.getPassword().equals(password)) {
 			throw new UnauthorizedUser("Unknown user " + user);
 		}
