@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app1:
+    image: 'authservice:1.0'
+    container_name: 'authserv'
+    ports:
+      - '80:8080'
+  custom:
+    build: ./
+
